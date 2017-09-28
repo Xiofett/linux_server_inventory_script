@@ -1,0 +1,110 @@
+<=== SYSTEM ===>
+  Distro info:	CentOS release 6.9 (Final)
+  Kernel:	Linux webserver 2.6.32-573.8.1.el6.x86_64 #1 SMP Tue Nov 10 18:01:38 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+  Uptime:	16:26:05 up 23 days,  2:00,  1 user,  load average: 0.00, 0.00, 0.00
+  Memory:	Total: 1877Mb	Used: 1754Mb	Free: 122Mb
+  Swap:		Total: 4031Mb	Used: 0Mb	Free: 4031Mb
+  Architecture:	x86_64
+  Processor:	0 : Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz
+  Processor:	1 : Intel(R) Xeon(R) CPU E5-2630 0 @ 2.30GHz
+  Date:		Thu Sep 28 16:26:05 CDT 2017
+
+<=== DISK USAGE===>
+  DISK DETAILS
+Filesystem: /dev/mapper/vg_webserver-lv_root     Percent Used: 6%
+Filesystem: /dev/sda1     Percent Used: 24%
+
+<=== Currently Mounted Filesystems ===>
+/dev/mapper/vg_webserver-lv_root on / type ext4 (rw)
+/dev/sda1 on /boot type ext4 (rw)
+
+<=== FSTAB ===>
+Mountpoint: /	Device: /dev/mapper/vg_webserver-lv_root 	Filesystem: ext4
+Mountpoint: /boot	Device: UUID=6eb03b40-7ec1-4089-81f4-474c65d089e3 	Filesystem: ext4
+
+<=== NETWORK ===>
+  Hostname:	webserver
+  IP (eth0):	192.168.1.20/24
+  Gateway:	192.168.1.1
+  Name Server:	8.8.8.8
+  Name Server:	8.8.4.4
+
+<=== NETSTAT ===>
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address               Foreign Address             State      
+tcp        0      0 0.0.0.0:5666                0.0.0.0:*                   LISTEN      
+tcp        0      0 0.0.0.0:3306                0.0.0.0:*                   LISTEN      
+tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN      
+tcp        0      0 127.0.0.1:25                0.0.0.0:*                   LISTEN      
+tcp        0     64 172.30.25.20:22             172.23.47.149:65452         ESTABLISHED 
+tcp        0      0 :::5666                     :::*                        LISTEN      
+tcp        0      0 :::80                       :::*                        LISTEN      
+tcp        0      0 :::22                       :::*                        LISTEN      
+tcp        0      0 ::1:25                      :::*                        LISTEN      
+
+<=== Running Processes ===>
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  19232  1556 ?        Ss   Sep05   0:05 /sbin/init
+root      1568  0.0  0.2 255808  3960 ?        Sl   Sep05   0:11 /sbin/rsyslogd -i /var/run/syslogd.pid -c 5
+root      1909  0.0  0.0   4064   600 tty2     Ss+  Sep05   0:00 /sbin/mingetty /dev/tty2
+root      1913  0.0  0.0   4064   596 tty3     Ss+  Sep05   0:00 /sbin/mingetty /dev/tty3
+root      1915  0.0  0.0   4064   600 tty4     Ss+  Sep05   0:00 /sbin/mingetty /dev/tty4
+root      1917  0.0  0.0   4064   600 tty5     Ss+  Sep05   0:00 /sbin/mingetty /dev/tty5
+root      1919  0.0  0.0   4064   596 tty6     Ss+  Sep05   0:00 /sbin/mingetty /dev/tty6
+root      1943  0.0  0.0   4064   596 tty1     Ss+  Sep05   0:00 /sbin/mingetty /dev/tty1
+root      2217  0.0  0.0  10640   716 ?        S<s  Sep05   0:00 /sbin/udevd -d
+root      2835  0.0  0.0  66260  1228 ?        Ss   Sep05   0:06 /usr/sbin/sshd
+root     28651  0.0  0.2 100032  4032 ?        Ss   16:25   0:00  \_ sshd: root@pts/0 
+root     28653  0.0  0.1 108448  2016 pts/0    Ss   16:25   0:00      \_ -bash
+root     28718  1.0  0.0 106084  1388 pts/0    S+   16:26   0:00          \_ /bin/bash ./linux_server_inventory.sh
+root     28749  0.0  0.0 110360  1164 pts/0    R+   16:26   0:00              \_ ps awfux
+root      2893  0.0  0.0 108188  1596 ?        S    Sep05   0:00 /bin/sh /usr/bin/mysqld_safe --datadir=/var/lib/mysql --socket=/var/lib/mysql/mysql.sock --pid-file=/var/run/mysqld/mysqld.pid --basedir=/usr --user=mysql
+mysql     2995  0.2  2.5 706592 48272 ?        Sl   Sep05  80:21  \_ /usr/libexec/mysqld --basedir=/usr --datadir=/var/lib/mysql --user=mysql --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/lib/mysql/mysql.sock
+root      3057  0.0  0.0 116888  1248 ?        Ss   Sep05   0:19 crond
+root      3157  0.0  0.1  80956  3464 ?        Ss   Sep05   0:26 /usr/libexec/postfix/master
+postfix   3160  0.0  0.1  81208  3604 ?        S    Sep05   0:15  \_ qmgr -l -t fifo -u
+postfix  27897  0.0  0.1  81036  3484 ?        S    15:52   0:00  \_ pickup -l -t fifo -u
+nrpe      3195  0.0  0.0  41496  1456 ?        Ss   Sep05   0:15 /usr/sbin/nrpe -c /etc/nagios/nrpe.cfg -d
+root      3236  0.0  0.0  29768   852 ?        S<sl Sep05   0:13 auditd
+root      3385  0.0  0.7 320416 13924 ?        Ss   Sep05   1:48 /usr/sbin/httpd
+apache   28884  0.0  0.3 320416  7100 ?        S    Sep24   0:00  \_ /usr/sbin/httpd
+apache   28885  0.0  0.3 320416  7084 ?        S    Sep24   0:00  \_ /usr/sbin/httpd
+apache   28886  0.0  0.3 320416  7084 ?        S    Sep24   0:00  \_ /usr/sbin/httpd
+apache   28887  0.0  0.3 320416  7084 ?        S    Sep24   0:00  \_ /usr/sbin/httpd
+apache   28888  0.0  0.3 320416  7084 ?        S    Sep24   0:00  \_ /usr/sbin/httpd
+apache   28889  0.0  0.3 320416  7084 ?        S    Sep24   0:00  \_ /usr/sbin/httpd
+apache   28890  0.0  0.3 320416  7084 ?        S    Sep24   0:00  \_ /usr/sbin/httpd
+apache   28891  0.0  0.3 320416  7084 ?        S    Sep24   0:00  \_ /usr/sbin/httpd
+
+<=== CRONTAB (root) ===>
+*/18 * * * * /root/bin/import.sh >> /var/log/import.log
+*/18 * * * * /root/bin/j15100116_import.sh >>  /var/log/j15100116_import.log 2>&1
+*/15 * * * * /root/bin/db_export.sh >> /var/log/export.log
+*/15 * * * * /root/bin/j15100116_db_export.sh >> /var/log/j15100116_export.log
+#30 2 * * * /usr/bin/php -f /var/www/html/jobs/taken_daily.php > /dev/null 2>&1
+#30 2 * * * /usr/bin/php -f /var/www/html/jobs/user_taken_daily.php > /dev/null 2>&1
+#30 2 * * 4 /usr/bin/php -f /var/www/html/jobs/manager_taken_weekly.php > /dev/null 2>&1
+#30 2 * * 4 /usr/bin/php -f /var/www/html/jobs/supervisor_taken_weekly.php > /dev/null 2>&1
+*/15 * * * * /usr/bin/php -f /var/www/html/jobs/gps_update.php > /dev/null 2>&1
+#*/5 * * * * /usr/bin/php -f /var/www/html/jobs/on_hand_email_que.php > /dev/null 2>&1
+#*/5 * * * * /usr/bin/php -f /var/www/html/jobs/take_inventory_email.php > /dev/null 2>&1
+#*/5 * * * * /usr/bin/php -f /var/www/html/jobs/taken_email_que.php > /dev/null 2>&1
+
+
+<=== IPTABLES ===>
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     all  --  anywhere             anywhere            state RELATED,ESTABLISHED 
+ACCEPT     icmp --  anywhere             anywhere            
+ACCEPT     all  --  anywhere             anywhere            
+ACCEPT     tcp  --  anywhere             anywhere            state NEW tcp dpt:ssh 
+ACCEPT     tcp  --  anywhere             anywhere            state NEW tcp dpt:http 
+ACCEPT     tcp  --  anywhere             anywhere            state NEW tcp dpt:5666 
+REJECT     all  --  anywhere             anywhere            reject-with icmp-host-prohibited 
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+REJECT     all  --  anywhere             anywhere            reject-with icmp-host-prohibited 
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
